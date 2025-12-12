@@ -5,7 +5,7 @@ public class Exercicio01 {
     public static void main(String[] args) {
         var scanner = new Scanner(System.in);
         
-        /*System.out.printf("Exercício 1: \nEscreva um código que receba o nome e o ano de nascimento de alguém e imprima na tela a seguinte mensagem: \"Olá 'Fulano' você tem 'X' anos\"");
+        System.out.printf("Exercício 1: \nEscreva um código que receba o nome e o ano de nascimento de alguém e imprima na tela a seguinte mensagem: \"Olá 'Fulano' você tem 'X' anos\"");
         var baseYear = OffsetDateTime.now().getYear();
         System.out.println("Informe seu nome:");
         var name = scanner.next();
@@ -26,7 +26,7 @@ public class Exercicio01 {
         System.out.println("Agora, informe o tamanho da altura deste triângulo:");
         var triangleHeight = scanner.nextFloat();
         var totalTriangleArea = triangleBase * triangleHeight;
-        System.out.printf("A área total do triângulo é de %s!", totalTriangleArea);*/
+        System.out.printf("A área total do triângulo é de %s!", totalTriangleArea);
         
         System.out.printf("Exercício 4: \nEscreva um código que receba o nome e a idade de 2 pessoas e imprima a diferença de idade entre eleas ");
         System.out.println("Por favor, informe o nome da primeira pessoa:");
