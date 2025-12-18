@@ -39,5 +39,7 @@ public class Exercicio01 {
         var secondPersonAge = scanner.nextInt();
         var totalAgeDifference = firstPersonAge - secondPersonAge;
         System.out.printf("A diferença de idade entre %s e %s é de %s anos!", firstPersonName, secondPersonName, totalAgeDifference);
+
+        scanner.close();
     }
 }

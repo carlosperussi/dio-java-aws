@@ -20,5 +20,7 @@ public class While {
 
             if(name.equalsIgnoreCase("exit")) break;
         } while(true);
+
+        scanner.close();
     }
 }

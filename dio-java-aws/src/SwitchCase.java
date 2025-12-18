@@ -43,5 +43,7 @@ public class SwitchCase {
             default -> System.out.println("Opção inválida");
         } 
         */
+
+        scanner.close();
     }
 }

@@ -20,6 +20,8 @@ public class EstruturaCondicional {
 
         System.out.println("Fim da execução!");
 
+        scanner.close();
+
         // Exemplo de Elvis operator
         /*
         var canDrive = (age >= 18) || (age >= 16 %% isEmancipated);

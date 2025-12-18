@@ -22,5 +22,7 @@ public class For {
             System.out.println(name);
         }
         */
+
+        scanner.close();
     }
 }
