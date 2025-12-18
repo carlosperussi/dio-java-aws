@@ -3,9 +3,9 @@ import java.util.Scanner;
 public class DesafioSalario {
     public static void main(String[] args) {
         Scanner leitorDeEntradas = new Scanner(System.in);
-        System.out.println("Informe o salário: ");
+        System.out.println("Informe o salário:");
         float valorSalario = leitorDeEntradas.nextFloat();
-        System.out.println("Agora, informe o valor dos benefícios: ");
+        System.out.println("Agora, informe o valor dos benefícios:");
         float valorBeneficios = leitorDeEntradas.nextFloat();
         float valorImposto = 0;
 
