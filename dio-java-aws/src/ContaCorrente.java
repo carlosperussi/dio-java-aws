@@ -23,8 +23,8 @@ public class ContaCorrente {
         return this.saldoDaConta;
     }
 
-    public void setSaldoContaCorrente(double saldoDepositoParam) {
-        this.saldoDaConta = saldoDepositoParam;
+    public void setSaldoContaCorrente(double saldoParam) {
+        this.saldoDaConta = saldoParam;
     }
 
     public double getSaldoChequeEspecial() {

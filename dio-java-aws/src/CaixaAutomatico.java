@@ -45,25 +45,29 @@ public class CaixaAutomatico {
     }
 
     public void sacarDinheiro(ContaCorrente contaCorrente) {
-
-        contaCorrente.setSaldoChequeEspecial(50);
-        contaCorrente.setSaldoContaCorrente(50);
-
-
+        double saldoContaTemp = 0;
         System.out.println("======================================================");
         System.out.println("Quanto você gostaria de sacar?");
         double valorParaSaque = scanner.nextDouble();
 
         if(valorParaSaque <= contaCorrente.getSaldoContaCorrente()) {
-            var saldoContaTemp = contaCorrente.getSaldoContaCorrente() - valorParaSaque;
+            System.out.println("O valor para saque é menor ou igual ao valor disponivel em conta");
+            saldoContaTemp = contaCorrente.getSaldoContaCorrente() - valorParaSaque;
             contaCorrente.setSaldoContaCorrente(saldoContaTemp);
-        }else if(valorParaSaque <= (contaCorrente.getSaldoChequeEspecial() + contaCorrente.getSaldoContaCorrente())) {
-            System.out.println("tem dinheiro disponivel");
+        }else if(valorParaSaque > contaCorrente.getSaldoContaCorrente()) {
+            if(valorParaSaque <= (contaCorrente.getSaldoContaCorrente() + contaCorrente.getSaldoChequeEspecial())) {
+                var saldoTemp = contaCorrente.getSaldoContaCorrente() - valorParaSaque;
+                contaCorrente.setSaldoContaCorrente(00);
+                if(saldoTemp < 0)
+                    saldoTemp = Math.abs(saldoTemp);
+                
+                saldoTemp = contaCorrente.getSaldoChequeEspecial() - saldoTemp;
+                contaCorrente.setSaldoChequeEspecial(saldoTemp);
+            }else
+                System.out.println("Saldo insuficiente!");
         }
-
-
         
-        System.out.println("Seu novo saldo é de: " + contaCorrente.getSaldoContaCorrente());
+        System.out.println("A quantia de: " + valorParaSaque + " foi sacada. Seu novo saldo é de: " + contaCorrente.getSaldoContaCorrente());
         System.out.println("======================================================");
     }
 
