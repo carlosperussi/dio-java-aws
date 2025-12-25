@@ -51,7 +51,6 @@ public class CaixaAutomatico {
         double valorParaSaque = scanner.nextDouble();
 
         if(valorParaSaque <= contaCorrente.getSaldoContaCorrente()) {
-            System.out.println("O valor para saque é menor ou igual ao valor disponivel em conta");
             saldoContaTemp = contaCorrente.getSaldoContaCorrente() - valorParaSaque;
             contaCorrente.setSaldoContaCorrente(saldoContaTemp);
         }else if(valorParaSaque > contaCorrente.getSaldoContaCorrente()) {
@@ -75,10 +74,35 @@ public class CaixaAutomatico {
         System.out.println("======================================================");
         System.out.println("Informe o valor do boleto à ser pago:");
         double valorBoleto = scanner.nextDouble();
-        var saldoContaTemp = contaCorrente.getSaldoContaCorrente() - valorBoleto;
-        contaCorrente.setSaldoContaCorrente(saldoContaTemp);
+        double saldoContaTemp;
+        // var saldoContaTemp = contaCorrente.getSaldoContaCorrente() - valorBoleto;
+
+        contaCorrente.setSaldoChequeEspecial(50);
+        contaCorrente.setSaldoContaCorrente(50);
+        
+        if(valorBoleto <= contaCorrente.getSaldoContaCorrente()) {
+            System.out.println("O valor do boleto é menor ou igual ao valor disponivel em conta");
+            saldoContaTemp = contaCorrente.getSaldoContaCorrente() - valorBoleto;
+            contaCorrente.setSaldoContaCorrente(saldoContaTemp);
+        }else if(valorBoleto > contaCorrente.getSaldoContaCorrente()) {
+            if(valorBoleto <= (contaCorrente.getSaldoContaCorrente() + contaCorrente.getSaldoChequeEspecial())) {
+                var saldoTemp = contaCorrente.getSaldoContaCorrente() - valorBoleto;
+                contaCorrente.setSaldoContaCorrente(00);
+                if(saldoTemp < 0)
+                    saldoTemp = Math.abs(saldoTemp);
+                
+                saldoTemp = contaCorrente.getSaldoChequeEspecial() - saldoTemp;
+                contaCorrente.setSaldoChequeEspecial(saldoTemp);
+            }else
+                System.out.println("Saldo insuficiente!");
+        }
+
         System.out.println("O boleto foi pago com sucesso. Seu saldo é de: " + contaCorrente.getSaldoContaCorrente());
         System.out.println("======================================================");
+
+        /* contaCorrente.setSaldoContaCorrente(saldoContaTemp);
+        System.out.println("O boleto foi pago com sucesso. Seu saldo é de: " + contaCorrente.getSaldoContaCorrente());
+        System.out.println("======================================================"); */
     }
 
     public void verificarUsoChequeEspecial(ContaCorrente contaCorrente) {
