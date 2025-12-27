@@ -75,10 +75,6 @@ public class CaixaAutomatico {
         System.out.println("Informe o valor do boleto à ser pago:");
         double valorBoleto = scanner.nextDouble();
         double saldoContaTemp;
-        // var saldoContaTemp = contaCorrente.getSaldoContaCorrente() - valorBoleto;
-
-        contaCorrente.setSaldoChequeEspecial(50);
-        contaCorrente.setSaldoContaCorrente(50);
         
         if(valorBoleto <= contaCorrente.getSaldoContaCorrente()) {
             System.out.println("O valor do boleto é menor ou igual ao valor disponivel em conta");
@@ -99,10 +95,6 @@ public class CaixaAutomatico {
 
         System.out.println("O boleto foi pago com sucesso. Seu saldo é de: " + contaCorrente.getSaldoContaCorrente());
         System.out.println("======================================================");
-
-        /* contaCorrente.setSaldoContaCorrente(saldoContaTemp);
-        System.out.println("O boleto foi pago com sucesso. Seu saldo é de: " + contaCorrente.getSaldoContaCorrente());
-        System.out.println("======================================================"); */
     }
 
     public void verificarUsoChequeEspecial(ContaCorrente contaCorrente) {
