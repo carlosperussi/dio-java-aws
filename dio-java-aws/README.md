@@ -1,4 +1,4 @@
-# Curso de Node.js
+# Curso de Java com AWS
 Este é um repositório onde os materiais ministrados pela DIO serão publicados. Este repo não tem como objetivo servir como portfólio, cabendo apenas aos motivos de aplicação de conhecimentos básicos, como:
 
 - Materiais, aulas e exercícios sobre a linguagem;
