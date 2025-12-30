@@ -1,9 +1,19 @@
 public sealed abstract class Employee permits Manager, Salesman {
-    private String code;
-    private String name;
-    private String address;
-    private int age;
-    private double salary;
+    protected String code;
+    protected String name;
+    protected String address;
+    protected int age;
+    protected double salary;
+
+    public Employee(String codeParam, String nameParam, String addressParam, int ageParam, double salaryParam) {
+        this.code = codeParam;
+        this.name = nameParam;
+        this.address = addressParam;
+        this.age = ageParam;
+        this.salary = salaryParam;
+    }
+
+    public Employee() {}
 
     public String getCode() {
         return code;
@@ -44,4 +54,6 @@ public sealed abstract class Employee permits Manager, Salesman {
     public void setSalary(final double salaryParam) {
         this.salary = salaryParam;
     }
+
+    public abstract double getFullSalary();
 }
