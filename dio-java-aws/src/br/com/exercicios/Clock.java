@@ -1,4 +1,4 @@
-public abstract class Clock {
+public sealed abstract class Clock permits RelogioBR, RelogioUS {
     protected int hora;
     protected int minuto;
     protected int segundo;
@@ -42,5 +42,9 @@ public abstract class Clock {
         this.segundo = segundoParam;
     }
 
-    abstract Clock converter(Clock clock);
+    abstract Clock conversor(Clock clock);
+
+    public String getHoraCompleta() {
+        return hora + ":" + minuto + ":" + segundo;
+    }
 }
