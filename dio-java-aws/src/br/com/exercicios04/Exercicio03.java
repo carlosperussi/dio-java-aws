@@ -1,6 +1,6 @@
 package br.com.exercicios04;
 
-public class Exercicio0403 {
+public class Exercicio03 {
     public static void main(String[] args) {
         Clock relogioBR = new RelogioBR();
         relogioBR.setSegundo(0);
