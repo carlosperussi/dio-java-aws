@@ -20,7 +20,7 @@ public non-sealed class Vendedor extends Funcionario {
         this.quantidadeDeVendas = quantidadeDeVendasParam;
     }
 
-    public static void manipularVendedor() {
+    public static void manipularVendedor(Caixa novoCaixaParam) {
         int opt;
         Vendedor novoVendedor = new Vendedor();
 
@@ -42,10 +42,10 @@ public non-sealed class Vendedor extends Funcionario {
                     novoVendedor = cadastrarVendedor();
                     break;
                 case 2:
-                    //realizarVenda();
+                    realizarVenda(novoVendedor, novoCaixaParam);
                     break;
                 case 3:
-                    consultarVendas();
+                    consultarVendas(novoVendedor, novoCaixaParam);
                     break;
                 case 4:
                     efetuarLogin(novoVendedor);
@@ -62,8 +62,6 @@ public non-sealed class Vendedor extends Funcionario {
                     break;
             }
         } while (opt != 9);
-
-        SCANNER.close();
     }
 
     public static Vendedor cadastrarVendedor() {
@@ -84,9 +82,32 @@ public non-sealed class Vendedor extends Funcionario {
         return new Vendedor(nomeFuncionario, emailFuncionario, senhaFuncionario, false);
     }
 
-    public static void consultarVendas() {
+    public static void realizarVenda(Vendedor novoVendedorParam, Caixa novoCaixaParam) {
         System.out.println("==============");
-        System.out.println("Consultando vendas...");
+
+        if(novoVendedorParam.getEstadoLogin()) {
+            int quantidadeItens;
+            System.out.printf("Informe a quantidade de itens vendidos: ");
+            quantidadeItens = SCANNER.nextInt();
+            novoCaixaParam.setQuantidadeDeVendas(novoCaixaParam.getQuantidadeDeVendas() + quantidadeItens);
+            System.out.println("Venda realizada com sucesso!");
+        }else {
+            System.out.println("Vendedor precisa estar logado para realizar uma venda!");
+            return;
+        }
+        
+        System.out.println("==============");
+    }
+
+    public static void consultarVendas(Vendedor novoVendedorParam, Caixa novoCaixaParam) {
+        System.out.println("==============");
+
+        if(novoVendedorParam.getEstadoLogin()) {
+            System.out.println("Quantidade de vendas: " + novoCaixaParam.getQuantidadeDeVendas());
+        } else {
+            System.out.println("Vendedor precisa estar logado para consultar vendas!");
+        }
+
         System.out.println("==============");
     }
 
@@ -99,18 +120,21 @@ public non-sealed class Vendedor extends Funcionario {
     public static void efetuarLogin(Vendedor novoVendedorParam) {
         System.out.println("==============");
 
-        if (!novoVendedorParam.getEstadoLogin()) {
-            System.out.printf("Informe a senha: ");
-            String senhaTemp = SCANNER.next();
+        if(novoVendedorParam.getNomeFuncionario() != null) {
+            if (!novoVendedorParam.getEstadoLogin()) {
+                System.out.printf("Informe a senha: ");
+                String senhaTemp = SCANNER.next();
 
-            if (senhaTemp.equals(novoVendedorParam.getSenhaFuncionario())) {
-                novoVendedorParam.setEstadoLogin(true);
-                System.out.println("Login realizado!");
-            }else
-                System.out.println("Senha inválida!");
-        } else {
-            System.out.println("Gerente já possui login ativo.");
-        }
+                if (senhaTemp.equals(novoVendedorParam.getSenhaFuncionario())) {
+                    novoVendedorParam.setEstadoLogin(true);
+                    System.out.println("Login realizado!");
+                }else
+                    System.out.println("Senha inválida!");
+            } else {
+                System.out.println("Vendedor já possui login ativo.");
+            }
+        }else
+            System.out.println("Nenhum vendedor cadastrado!");
 
         System.out.println("==============");
     }
