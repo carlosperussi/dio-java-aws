@@ -1,3 +1,5 @@
+package br.com.exercicio01;
+
 import java.time.OffsetDateTime;
 import java.util.Scanner;
 
@@ -41,3 +43,4 @@ public class Exercicio01 {
         System.out.printf("A diferença de idade entre %s e %s é de %s anos!", firstPersonName, secondPersonName, totalAgeDifference);
     }
 }
+

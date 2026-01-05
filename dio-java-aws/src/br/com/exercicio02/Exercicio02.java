@@ -1,3 +1,5 @@
+package br.com.exercicio02;
+
 import java.util.Scanner;
 
 public class Exercicio02 {

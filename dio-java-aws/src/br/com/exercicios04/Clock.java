@@ -1,3 +1,5 @@
+package br.com.exercicios04;
+
 public sealed abstract class Clock permits RelogioBR, RelogioUS {
     protected int hora;
     protected int minuto;
@@ -48,3 +50,4 @@ public sealed abstract class Clock permits RelogioBR, RelogioUS {
         return hora + ":" + minuto + ":" + segundo;
     }
 }
+

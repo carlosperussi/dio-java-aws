@@ -1,3 +1,5 @@
+package br.com.exercicios04;
+
 public class Exercicio0403 {
     public static void main(String[] args) {
         Clock relogioBR = new RelogioBR();
@@ -10,3 +12,4 @@ public class Exercicio0403 {
         System.out.println(new RelogioUS().conversor(relogioBR).getHoraCompleta());
     }
 }
+
