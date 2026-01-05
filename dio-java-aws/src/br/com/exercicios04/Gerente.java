@@ -10,7 +10,7 @@ public non-sealed class Gerente extends Funcionario {
 
     public Gerente () {}
 
-    public static void manipularGerente() {
+    public static void manipularGerente(Caixa novoCaixaParam) {
         int opt;
         Gerente novoGerente = new Gerente();
 
@@ -32,10 +32,10 @@ public non-sealed class Gerente extends Funcionario {
                     novoGerente = cadastrarGerente();
                     break;
                 case 2:
-                    consultarRelatorioFinanceiro();
+                    consultarRelatorioFinanceiro(novoCaixaParam);
                     break;
                 case 3:
-                    consultarVendas();
+                    consultarVendas(novoCaixaParam);
                     break;
                 case 4:
                     efetuarLogin(novoGerente);
@@ -52,7 +52,6 @@ public non-sealed class Gerente extends Funcionario {
                     break;
             }
         } while (opt != 9);
-        SCANNER.close();
     }
 
     public static Gerente cadastrarGerente() {
@@ -71,6 +70,20 @@ public non-sealed class Gerente extends Funcionario {
         System.out.println("==============");
 
         return new Gerente(nomeFuncionario, emailFuncionario, senhaFuncionario, true);
+    }
+
+    public static void consultarRelatorioFinanceiro(Caixa novoCaixaParam) {
+        System.out.println("==============");
+        System.out.printf("Relatório Financeiro do Caixa:\n");
+        System.out.printf("Valor em caixa: R$ %.2f\n", novoCaixaParam.getValorEmCaixa());
+        System.out.printf("Total de vendas realizadas: %d\n", novoCaixaParam.getQuantidadeDeVendas());
+        System.out.println("==============");
+    }
+
+    public static void consultarVendas(Caixa novoCaixaParam) {
+        System.out.println("==============");
+        System.out.printf("Total de vendas realizadas: %d\n", novoCaixaParam.getQuantidadeDeVendas());
+        System.out.println("==============");
     }
 
     public static void consultarVendas() {
