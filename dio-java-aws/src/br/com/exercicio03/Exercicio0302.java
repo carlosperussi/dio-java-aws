@@ -1,3 +1,5 @@
+package br.com.exercicio03;
+
 import java.util.Scanner;
 
 public class Exercicio0302 {
@@ -52,3 +54,4 @@ public class Exercicio0302 {
         }while(option != 0);
     }
 }
+

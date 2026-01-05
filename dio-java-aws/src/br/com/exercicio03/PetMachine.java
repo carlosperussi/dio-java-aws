@@ -1,3 +1,5 @@
+package br.com.exercicio03;
+
 public class PetMachine {
     private boolean clean = true;
     private int water = 30;
@@ -73,3 +75,4 @@ public class PetMachine {
         System.out.println("A máquina está limpa!");
     }
 }
+

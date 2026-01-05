@@ -1,3 +1,5 @@
+package br.com.exercicio03;
+
 import java.util.Scanner;
 
 public class Exercicio0303 {
@@ -93,3 +95,4 @@ public class Exercicio0303 {
         System.out.println("Tentando colocar shampoo na máquina;");
     }
 }
+

@@ -1,3 +1,5 @@
+package br.com.exercicios04;
+
 public non-sealed class RelogioBR extends Clock {
     @Override
     public Clock conversor(final Clock clock) {
@@ -13,3 +15,4 @@ public non-sealed class RelogioBR extends Clock {
         return this;
     }
 }
+

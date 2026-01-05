@@ -1,3 +1,5 @@
+package br.com.exercicio03;
+
 public class Carro {
     private String modeloDoCarro;
     private boolean estadoDoMotor;

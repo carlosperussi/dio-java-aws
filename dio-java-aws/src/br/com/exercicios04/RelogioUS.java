@@ -1,3 +1,5 @@
+package br.com.exercicios04;
+
 public non-sealed class RelogioUS extends Clock {
     private String periodoDoDia;
 

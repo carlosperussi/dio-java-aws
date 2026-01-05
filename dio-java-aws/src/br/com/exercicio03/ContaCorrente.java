@@ -1,3 +1,5 @@
+package br.com.exercicio03;
+
 import java.util.concurrent.ThreadLocalRandom;
 
 public class ContaCorrente {
@@ -43,3 +45,4 @@ public class ContaCorrente {
         return this.numeroDaConta;
     }
 }
+

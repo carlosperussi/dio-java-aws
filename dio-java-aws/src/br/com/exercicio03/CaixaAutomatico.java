@@ -1,3 +1,5 @@
+package br.com.exercicio03;
+
 import java.util.Scanner;
 
 public class CaixaAutomatico {
@@ -114,3 +116,4 @@ public class CaixaAutomatico {
         }
     }
 }
+

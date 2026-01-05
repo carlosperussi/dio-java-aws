@@ -1,3 +1,5 @@
+package br.com.exercicio03;
+
 public class Pet {
     private final String name;
     private boolean clean;
@@ -19,3 +21,4 @@ public class Pet {
         this.clean = clean;
     }
 }
+
